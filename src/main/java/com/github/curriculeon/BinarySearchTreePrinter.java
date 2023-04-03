@@ -7,18 +7,6 @@ public class BinarySearchTreePrinter<Key extends Comparable<Key>, Value> {
         this.bst = bst;
     }
 
-    public String printInOrder() {
-        return printInOrder(bst.getRoot(), new StringBuilder());
-    }
-
-    public String printPreOrder() {
-        return printPreOrder(bst.getRoot(), new StringBuilder());
-    }
-
-    public String printPostOrder() {
-        return printPostOrder(bst.getRoot(), new StringBuilder());
-    }
-
     private String printInOrder(BinaryTreeNode<Key, Value> node, StringBuilder sb) {
         if (node != null) {
             printInOrder(node.getLeft(), sb);
@@ -44,5 +32,17 @@ public class BinarySearchTreePrinter<Key extends Comparable<Key>, Value> {
             sb.append(node.getKey() + "\n");
         }
         return sb.toString();
+    }
+
+    public String printInOrder() {
+        return printInOrder(bst.getRoot(), new StringBuilder());
+    }
+
+    public String printPreOrder() {
+        return printPreOrder(bst.getRoot(), new StringBuilder());
+    }
+
+    public String printPostOrder() {
+        return printPostOrder(bst.getRoot(), new StringBuilder());
     }
 }
